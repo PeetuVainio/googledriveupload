@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "stoked-dryad-410808",
+  "private_key_id": "d4353d4b5ce6b7597de42061907ea9f7ba77013a",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC1hFaLBV+zqcCG\nSvmy0payixbAv1xFFFGaOrG/KaxuAL07BIvyVFQ6ez6IqWSDgFPtofsPgo1lVVwq\nnYVfTWRwtF1j0VYVKJzX8hP08v/5Ln5eWFu2ZkgTLm/LgPxRmzx+R+YXDLf2ZIDE\nI/gYXAzQ/p+ihEVY6XqGpsT/UrVaNlRAiwVuBipgN1h6fSgiEY5qVWJQTpFgvCRD\nYhAadP3O3fzCD5/tx1fWX0kcxQgWZ1tK40xcKrzOGloGHM4ddlfpFhrpGMhsjnMA\nG3UpXZ8TwL/40ujvU+u2vSUnspJOXOVHisQHNHlF1J6SfW8oAULYZN6lXasQnuHf\nZ8OpowAPAgMBAAECggEAUMmgPQq8v/l2+y5GeTz6HmgCTfI9jm9PLG4gKz1Qhbsl\nfa113fqDbG3q9Kcz2cVVVWfpFkucQ/Qca8klEbgf0nusLx9+CTfEquYO1NAMdmqn\nirUXyJQ4UvUxg6kaY/XMFEZK1YpvHCY6G1II+0qI18Hj6dCmDr8HrgNunVbB6W6R\n6SB6E7TOdK8F/OU9j4gw8JD+6VK9sFsK0lxlQok6LjmMR/Hr0k64vTZ5RaIowFAP\nsCz/E8dCWV9dYInhHY/oklJxZx2EkwkcdOSq3ueiMNHXVDzqOp5rPpq8SFy3fTon\nL9doTMMsrGMWb2FFqRdsYCu07V6GcrB97xV8QMpvcQKBgQDYKsfypUYLeuJqBScI\nGm555Jxlt72U0o+a0xczsbAikytvct7UK+Rooz/N+DszaLIs4d/wxkxWIsoxXpXg\nVDQ/IVxdP+b8gaXvU8OAlAmRQHViujs/KarayvsP1N+xuo9ivcxXrWGVCZ0WlWnR\nKVp8CnDG5yWUDdneNCWas26nkQKBgQDW9wKDX4HK1E9Ln2DxUYQjd3TyRZqyntoT\nKWkoHeIAZMmXKl78GwjIc52qpkQLcvjYK1n/f7+wzcyB+7/W3LqVxjzf0+JyGzVm\n2LHq45E1XUQ6QYRs2D94w+4dz0RcIVvyKuYWeq3fWJtd0l0QT5+h+iN1is1GpxTA\nwo1eOFWdnwKBgAJ8q4Q9JosnRMeXe5V6SF8apDn/XS0DJyfO2et8Vdxv+QX1Ol8S\nijQx/J/wBS5YPASMLLlmbqZnDBB5WBwWm+tGBPwFqjCphTE1s4AdM+b56N/T6K6X\nWiHeR/ksp84xqUinilxP4FmInMgPvAHuCd53eEixjBsh9am6y9v1yIYhAoGBAI+0\nqbVxj68sp6YCcihhOlkLbt7XsUdf8qGEuYvcDk39Etc/uCgJWqHGyMxgQnT0825v\n7MZlfJyRt/nddq4I+aNO1zs6xtNJZTXP/4DriROHuijHy+OH3Ua6lODQwv5kPrdx\n/kdg1APPlG3wR86zrB/4vOPDWt+0qqcCaMdoGbQ5AoGARVyxAXabDeQ7xlTf5u6c\nKdPazq9ECTpZdX2oOacuTND5jrASiGfskgqvEUlt966IH1mGUIfwGAqMLX/CxIev\ny8DYH5qOKv9Uby6vDfF0m/RsWWHvXAI/2vyLOjK/zYsx1u5zSO1UHgyzVKu+dP23\n4HeRnWjV8NT8HPrVydsvZIA=\n-----END PRIVATE KEY-----\n",
+  "client_email": "uploadfiles@stoked-dryad-410808.iam.gserviceaccount.com",
+  "client_id": "107888347875598943511",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/uploadfiles%40stoked-dryad-410808.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

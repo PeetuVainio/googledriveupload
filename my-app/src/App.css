@@ -1,0 +1,75 @@
+:root {
+  /* Text style */
+  --font: 'Poppins', sans-serif;
+  --main-text: #363636;
+  --second-text: #868484;
+
+  /* Layout style */
+  --main: #ffffff;
+  --accent: #60c1b6;
+  --general-gray: #36363644;
+  --darker-gray: #363636b3;
+
+  /* Box style */
+  --radius: 0.45rem;
+}
+
+.uploadsubmitbtn{
+  color: white;
+  font-family: var(--font);
+  font-weight: 600;
+  font-size: 13px;
+  outline: none;
+  border: none;
+  padding: 0.70rem 1.85rem;
+  background-color: var(--accent);
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+
+.selectfilesbox{
+    background-color: #B5E2DD01;
+    padding: 10px;
+    border-radius: var(--radius);
+    border: 1.5px solid var(--general-gray);
+    width: 400px;
+    margin: 5px;
+    height: 100px;
+}
+
+input[type=file]::file-selector-button {
+  cursor: pointer;
+  font-size: 1.2em;
+}
+
+/* Center only the spinner vertically */
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100vh;
+}
+
+/* Loading spinner style */
+.loadingcircle-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.loadingcircle {
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid var(--accent);
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation: spin 1s linear infinite;
+  margin-bottom: 10px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
