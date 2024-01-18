@@ -27,6 +27,12 @@
   cursor: pointer;
 }
 
+.uploadsubmitbutton.loading {
+  background-color: #ff5b5b;  /* Punainen väri latauksen aikana */
+  cursor: not-allowed;  /* Estä kursorin muutos latauksen aikana */
+}
+
+
 .selectfilesbox{
     background-color: #B5E2DD01;
     padding: 10px;

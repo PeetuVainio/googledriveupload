@@ -10,6 +10,8 @@ function App() {
   const [successMessage, setSuccessMessage] = useState(null);
   // Luodaan tilamuuttuja Google Drive -linkkien seuraamiseksi
   const [driveLinks, setDriveLinks] = useState([]);
+  // Luodaan tilamuuttuja estämään "Lähetä Tiedosto" -painikkeen painaminen latauksen aikana
+  const [disableButton, setDisableButton] = useState(false);
 
   // Käsittelijäfunktio tiedoston lataamiseksi Google Driveen
   const handleFileUpload = async () => {
@@ -21,6 +23,9 @@ function App() {
       alert("Lähetä vain yksi tiedosto kerrallaan!"); // Näytetään ilmoitus, jos valittuna on useampi tiedosto
       return;
     }
+
+    // Estetään "Lähetä Tiedosto" -painikkeen painaminen latauksen aikana
+    setDisableButton(true);
 
     // Luodaan FormData-objekti tiedoston lähettämistä varten
     const formData = new FormData();
@@ -62,6 +67,8 @@ function App() {
       console.error("Virhe:", error);
     } finally {
       setLoading(false); // Asetetaan lataustila pois päältä
+      // Sallitaan "Lähetä Tiedosto" -painikkeen painaminen uudelleen
+      setDisableButton(false);
     }
   };
 
@@ -74,9 +81,15 @@ function App() {
       <input className="selectfilesbox" type="file" ref={fileInputRef} /><br/><br/>
       
       {/* Lataa tiedosto -painike */}
-      <button className="uploadsubmitbutton" onClick={handleFileUpload}>Lähetä Tiedosto</button>
+      <button 
+        className={`uploadsubmitbutton ${loading ? 'loading' : ''}`}
+        onClick={handleFileUpload}
+        disabled={disableButton} // Estetään painike, kun lataus on käynnissä
+      >
+        {loading ? 'Lähetetään Tiedostoa...' : 'Lähetä Tiedosto'}
+      </button>
 
-      {/* Näytä latausikoni , jos lataus on käynnissä */}
+      {/* Näytä latausikoni, jos lataus on käynnissä */}
       {loading && (
         <div className="loadingcircle-container">
           <div className="loadingcircle"></div>
