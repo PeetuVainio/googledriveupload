@@ -6,3 +6,4 @@
 - npm init -y
 - npm i express cors multer googleapis
 - node upload.js
+- npm start
