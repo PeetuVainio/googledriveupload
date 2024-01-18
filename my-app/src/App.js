@@ -74,7 +74,7 @@ function App() {
       <input className="selectfilesbox" type="file" ref={fileInputRef} /><br/><br/>
       
       {/* Lataa tiedosto -painike */}
-      <button className="uploadsubmitbtn" onClick={handleFileUpload}>Lähetä Tiedosto</button>
+      <button className="uploadsubmitbutton" onClick={handleFileUpload}>Lähetä Tiedosto</button>
 
       {/* Näytä latausikoni , jos lataus on käynnissä */}
       {loading && (
