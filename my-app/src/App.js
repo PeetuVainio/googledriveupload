@@ -1,8 +1,6 @@
-// Tuodaan tarvittavat tyylit ja React-moduuli
 import './App.css';
 import React, { useRef, useState } from 'react';
 
-// Luodaan React-komponentti App
 function App() {
   // Luodaan viittaus tiedostokenttään
   const fileInputRef = useRef(null);
@@ -78,7 +76,7 @@ function App() {
       {/* Lataa tiedosto -painike */}
       <button className="uploadsubmitbtn" onClick={handleFileUpload}>Lähetä Tiedosto</button>
 
-      {/* Näytä latausikonin container, jos lataus on käynnissä */}
+      {/* Näytä latausikoni , jos lataus on käynnissä */}
       {loading && (
         <div className="loadingcircle-container">
           <div className="loadingcircle"></div>
@@ -88,7 +86,7 @@ function App() {
       {/* Näytä onnistumisviesti, jos se on käytettävissä */}
       {successMessage}
 
-      {/* Näytä Google Drive -linkit, jos niitä on käytettävissä */}
+      {/* Näytä Google Drive -linkit */}
       {driveLinks.length > 0 && (
         <div>
           <p>Google Drive linkki:</p>
@@ -104,5 +102,4 @@ function App() {
   );
 }
 
-// Viedään App-komponentti oletusarvoisesti käytettäväksi
 export default App;
