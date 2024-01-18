@@ -14,7 +14,7 @@
   --radius: 0.45rem;
 }
 
-.uploadsubmitbutton{
+.uploadsubmitbutton {
   color: white;
   font-family: var(--font);
   font-weight: 600;
@@ -33,7 +33,7 @@
 }
 
 
-.selectfilesbox{
+.selectfilesbox {
     background-color: #B5E2DD01;
     padding: 10px;
     border-radius: var(--radius);

@@ -50,7 +50,7 @@ function App() {
 
       // Asetetaan onnistumisviesti sen mukaan, montako tiedostoa lähetettiin
       if (files.length === 1) {
-        setSuccessMessage(`Tiedosto '${data.files[0].name}' siirretty Google Driveen`);
+        setSuccessMessage(`Tiedosto '${data.files[0].name}' lähetetty Google Driveen`);
       }
 
       // Tyhjennetään tiedostokenttä
