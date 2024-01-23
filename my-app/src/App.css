@@ -25,6 +25,22 @@
   background-color: var(--accent);
   border-radius: var(--radius);
   cursor: pointer;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.kopioilinkkibutton {
+  color: white;
+  font-family: var(--font);
+  font-weight: 600;
+  font-size: 13px;
+  outline: none;
+  border: none;
+  padding: 0.35rem 0.925rem;
+  background-color: var(--accent);
+  border-radius: var(--radius);
+  cursor: pointer;
+  margin-left: 10px;
 }
 
 .uploadsubmitbutton.loading {
@@ -50,6 +66,7 @@ input[type=file]::file-selector-button {
 
 /* Center only the spinner vertically */
 .App {
+  font-family: var(--font);
   display: flex;
   flex-direction: column;
   align-items: center;

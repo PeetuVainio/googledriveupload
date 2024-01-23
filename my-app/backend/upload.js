@@ -9,7 +9,7 @@ const app = express();
 
 // Määritellään multer-tiedostojen tallennuspaikka ja nimeäminen
 const storage = multer.diskStorage({
-  destination: 'uploads',  // Tallennuskansio
+  // destination: 'uploads',  // Tallennuskansio
   filename: function (req, file, callback) {
     const extension = file.originalname.split(".").pop();  // Haetaan tiedoston tiedostopääte
     callback(null, `${file.fieldname}-${Date.now()}.${extension}`);  // Luodaan tiedostonimi lisäämällä aikaleima

@@ -12,15 +12,17 @@ function App() {
   const [driveLinks, setDriveLinks] = useState([]);
   // Luodaan tilamuuttuja estämään "Lähetä Tiedosto" -painikkeen painaminen latauksen aikana
   const [disableButton, setDisableButton] = useState(false);
+  // Luodaan tilamuuttuja hallitsemaan "Kopioi linkki" -napin tilaa
+  const [copyButtonState, setCopyButtonState] = useState({});
 
   // Käsittelijäfunktio tiedoston lataamiseksi Google Driveen
   const handleFileUpload = async () => {
     // Haetaan tiedostot tiedostokentästä
     const files = fileInputRef.current.files;
 
-    // Tarkistetaan, onko valittuna vain yksi tiedosto
+    // Tarkistetaan, onko valittuna tiedostoa
     if (files.length !== 1) {
-      alert("Lähetä vain yksi tiedosto kerrallaan!"); // Näytetään ilmoitus, jos valittuna on useampi tiedosto
+      alert("Lisää tiedosto!"); // Näytetään ilmoitus, jos valittuna ei ole tiedostoa
       return;
     }
 
@@ -34,6 +36,9 @@ function App() {
     try {
       setLoading(true); // Asetetaan lataustila päälle
 
+      setSuccessMessage(null);
+      setDriveLinks([]);
+
       // Lähetetään POST-pyyntö tiedoston lataamiseksi palvelimelle
       const response = await fetch("http://localhost:5000/upload", {
         method: 'POST',
@@ -42,6 +47,7 @@ function App() {
 
       // Käsitellään palvelimen vastaus JSON-muodossa
       const data = await response.json();
+      console.log("Tiedosto lähetetty onnistuneesti");
       console.log("Palvelimen vastaus:", data.files);
 
       // Haetaan Google Drive -linkit palvelimen vastauksesta
@@ -50,19 +56,12 @@ function App() {
 
       // Asetetaan onnistumisviesti sen mukaan, montako tiedostoa lähetettiin
       if (files.length === 1) {
-        setSuccessMessage(`Tiedosto '${data.files[0].name}' lähetetty Google Driveen`);
+        setSuccessMessage(`Tiedosto "${data.files[0].name}" lähetetty Google Driveen`);
       }
 
       // Tyhjennetään tiedostokenttä
       fileInputRef.current.value = "";
 
-      // Piilotetaan onnistumisviesti ja Google Drive -linkit 10 sekunnin kuluttua
-      /*
-      setTimeout(() => {
-        setSuccessMessage(null);
-        setDriveLinks([]);
-      }, 10000);
-      */
     } catch (error) {
       console.error("Virhe:", error);
     } finally {
@@ -72,13 +71,23 @@ function App() {
     }
   };
 
-  // Palautetaan JSX-rakenne
+  // Käsittelijäfunktio linkin kopioimiseksi leikepöydälle
+  const copyToClipboard = (link, index) => {
+    navigator.clipboard.writeText(link);
+    // Asetetaan napin tila muuttuneeksi
+    setCopyButtonState({ ...copyButtonState, [index]: true });
+    // Palautetaan napin alkuperäinen tila 3 sekunnin kuluttua
+    setTimeout(() => {
+      setCopyButtonState({ ...copyButtonState, [index]: false });
+    }, 3000);
+  };
+
   return (
     <div className="App">
       <h1>Lähetä Tiedosto Google Driveen</h1>
       
       {/* Tiedostokenttä */}
-      <input className="selectfilesbox" type="file" ref={fileInputRef} /><br/><br/>
+      <input className="selectfilesbox" type="file" ref={fileInputRef} />
       
       {/* Lataa tiedosto -painike */}
       <button 
@@ -106,7 +115,16 @@ function App() {
           <ul>
             {/* Luo lista Google Drive -linkeistä */}
             {driveLinks.map((link, index) => (
-              <li key={index}><a href={link} target="_blank" rel="noopener noreferrer">{link}</a></li>
+              <li key={index}>
+                <a href={link} target="_blank" rel="noopener noreferrer">{link}</a>
+                <button 
+                  className="kopioilinkkibutton"
+                  onClick={() => copyToClipboard(link, index)}
+                  disabled={copyButtonState[index]} // Estetään nappia, jos se on jo kopioitu
+                >
+                  {copyButtonState[index] ? 'Linkki kopioitu!' : 'Kopioi linkki'}
+                </button>
+              </li>
             ))}
           </ul>
         </div>
