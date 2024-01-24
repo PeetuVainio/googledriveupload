@@ -7,7 +7,7 @@
         requestBody: {
           name: file.originalname,
           mimeType: file.mimetype,
-          parents: ['Lisää tähän kansion ID']  // Tämä on Google Driven kohdekansion ID
+          parents: ['Lisää-tähän-kansion-ID']  // Tämä on Google Driven kohdekansion ID
         },
         media: {
           body: fs.createReadStream(file.path)
