@@ -5,7 +5,7 @@ const path = require('path');
 const cors = require('cors');
 const fs = require('fs');
 
-const app = express();
+const uploadapp = express();
 
 // Määritellään multer-tiedostojen tallennuspaikka ja nimeäminen
 const storage = multer.diskStorage({
@@ -19,14 +19,14 @@ const storage = multer.diskStorage({
 // Luodaan multer-tiedoston latausobjekti käyttäen määriteltyä tallennuspaikkaa
 const upload = multer({ storage: storage });
 
-app.use(cors());
+uploadapp.use(cors());
 
-app.get('/', (req, res) => {
+uploadapp.get('/', (req, res) => {
   res.send('Toimii');  // Palautetaan vastaus "Toimii" selaimelle
 });
 
 // Määritellään käsittelijä '/upload' reitille (POST-pyyntö)
-app.post('/upload', upload.array('files'), async (req, res) => {
+uploadapp.post('/upload', upload.array('files'), async (req, res) => {
   try {
     // Luodaan Google Auth -objekti käyttäen API-avaintiedostoa ja Drive-oikeuksia
     const auth = new google.auth.GoogleAuth({
@@ -52,7 +52,7 @@ app.post('/upload', upload.array('files'), async (req, res) => {
         requestBody: {
           name: file.originalname,
           mimeType: file.mimetype,
-          parents: ['1SaGqdyp_7Hu1h9MkNJJ3MQxXjPZDI7cJ']  // Tämä on Google Driven kohdekansion ID
+          parents: ['1pb2P8-_q_ed9aHBG-7vfvPNFzxBccsS6']  // Tämä on Google Driven kohdekansion ID
         },
         media: {
           body: fs.createReadStream(file.path)
@@ -79,6 +79,6 @@ app.post('/upload', upload.array('files'), async (req, res) => {
 });
 
 // Sovellus kuuntelee porttia 5000
-app.listen(5000, () => {
+uploadapp.listen(5000, () => {
   console.log("App is listening on port 5000");
 });

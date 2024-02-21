@@ -14,7 +14,18 @@
   --radius: 0.45rem;
 }
 
-.uploadsubmitbutton {
+body {
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  background-color: white;
+  background-image: linear-gradient(rgb(212, 251, 227), rgb(255, 255, 255));
+  background-repeat: no-repeat;
+  background-size: auto;
+}
+
+.uploadSubmitButton {
   color: white;
   font-family: var(--font);
   font-weight: 600;
@@ -22,38 +33,30 @@
   outline: none;
   border: none;
   padding: 0.70rem 1.85rem;
-  background-color: var(--accent);
+  background-color: #45c39d;
+  background-image: linear-gradient(#4cdcb1, #45c39d);
   border-radius: var(--radius);
   cursor: pointer;
   margin-top: 20px;
   margin-bottom: 20px;
 }
 
-.kopioilinkkibutton {
-  color: white;
-  font-family: var(--font);
-  font-weight: 600;
-  font-size: 13px;
-  outline: none;
-  border: none;
-  padding: 0.35rem 0.925rem;
-  background-color: var(--accent);
-  border-radius: var(--radius);
-  cursor: pointer;
-  margin-left: 10px;
+.uploadSubmitButton:hover {
+  background-color: #4ee3b7;
+  background-image: linear-gradient(#4cdcb1, #4ee3b7);
+  box-shadow: 2px 2px 10px rgba(96, 255, 191, 0.36);
 }
 
-.uploadsubmitbutton.loading {
-  background-color: #ff5b5b;  /* Punainen väri latauksen aikana */
-  cursor: not-allowed;  /* Estä kursorin muutos latauksen aikana */
+.uploadSubmitButton.loading {
+  cursor: not-allowed;
 }
 
-
-.selectfilesbox {
-    background-color: #B5E2DD01;
+.selectFilesBox {
+    background-color: #B5E2DD01; 
+    background-image: linear-gradient(to right, rgb(227, 255, 227), rgb(255, 255, 255));
+    box-shadow: 3px 3px 10px rgba(19, 132, 19, 0.197);
     padding: 10px;
-    border-radius: var(--radius);
-    border: 1.5px solid var(--general-gray);
+    border-radius: var(--radius); 
     width: 400px;
     margin: 5px;
     height: 100px;
@@ -64,25 +67,24 @@ input[type=file]::file-selector-button {
   font-size: 1.2em;
 }
 
-/* Center only the spinner vertically */
-.App {
+.uploadApp {
   font-family: var(--font);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  height: 100vh;
+  height: auto;
+  text-align: center;
 }
 
-/* Loading spinner style */
-.loadingcircle-container {
+.loadingCircle-Container {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 10px;
 }
 
-.loadingcircle {
+.loadingCircle {
   border: 8px solid #f3f3f3;
   border-top: 8px solid var(--accent);
   border-radius: 50%;
@@ -95,4 +97,18 @@ input[type=file]::file-selector-button {
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+
+.tealButton {
+  cursor: pointer;
+  outline: none;
+  border: none;
+  width: 110px;
+  font-family: var(--font);
+  font-weight: 600;
+  border-radius: var(--radius);
+  background-color: #45c39d;
+  background-image: linear-gradient(#4cdcb1, #45c39d);
+  color: white;
+  padding: 0.70rem;
 }
