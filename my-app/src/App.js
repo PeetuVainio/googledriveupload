@@ -40,7 +40,7 @@ const handleFileUpload = async () => {
   setDriveLinks([]);
 
   // Lähetetään POST-pyyntö tiedoston lataamiseksi palvelimelle
-  const response = await fetch("https://googledriveupload-ehgb.vercel.app", {
+  const response = await fetch("https://localhost:5000/upload", {
       method: 'POST',
       body: formData
   });
