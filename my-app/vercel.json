@@ -2,14 +2,14 @@
     "version": 2,
     "builds": [
      {
-      "src": "upload.js",
+      "src": "./backend/upload.js",
       "use": "@vercel/node"
      }
     ],
     "routes": [
      {
       "src": "/(.*)",
-      "dest": "upload.js"
+      "dest": "/"
      }
     ]
    }
