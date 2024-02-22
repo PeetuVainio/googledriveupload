@@ -40,7 +40,7 @@ const handleFileUpload = async () => {
   setDriveLinks([]);
 
   // Lähetetään POST-pyyntö tiedoston lataamiseksi palvelimelle
-  const response = await fetch("https://localhost:5000/upload", {
+  const response = await fetch("http://localhost:5000/upload", {
       method: 'POST',
       body: formData
   });
